@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>São Paulo Fan Clube</title>
+
+  <script src="./js/sessao.js"></script>
+
+  <link rel="stylesheet" href="./css/estilo.css">
+  <link rel="icon" href="./imagens/icone_principal_sao_paulo.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <!-- <img src="imagens/icone_principal_sao_paulo.png" style="width: 50px; height: 50px;"> -->
+      <a class="titulo" href="/">São Paulo Fan Clube</a>
+      <ul class="navbar">
+        <li class="agora"><a href="#" class="link_navbar" id="scrollToSection">Inicial</a></li>
+        <li><a href="/" class="link_navbar">Sobre </a></li>
+        <li><span style="color: black; padding: 10px;">|</span></li>
+        <li><a href="login.html" class="link_navbar">Login</a></li>
+        <li><a href="cadastro.html" class="link_navbar">Cadastro</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="banner" id="targetSection">
+    <div class="container">
+      <span class="banner-title"><span class="frase_inicio">Nas arquibancadas <br> ecoa a <a
+            class="palavra_frase_inicio" href="/">paixão</a>, <br> no gramado <br> se escreve a <br> <a
+            class="palavra_frase_inicio"
+            href="https://www.futfanatics.com.br/almanaquesaopaulo#:~:text=A%20História,-do%20SPFC&text=O%20tricolor%20paulista%20surgiu%20através,Floresta%2C%20como%20muitos%20o%20chamavam.">história</a>.
+        </span></span>
+    </div>
+  </div>
+
+  <div class="social">
+    <div class="container">
+      <div class="boxes">
+        <div class="box">
+          <img src="imagens/campeao1992.jpg">
+          <h4>Campeão Mundial 1992</h4>
+          <p>Em 1992, o São Paulo escreveu o primeiro capítulo glorioso de sua história no cenário internacional ao
+            conquistar a Copa Libertadores da América. Sob o comando do técnico Telê Santana e com um elenco estelar
+            liderado por ícones como Raí e Müller, o Tricolor Paulista desbravou obstáculos e superou desafios para
+            alcançar a glória continental. A final, contra o Newell's Old Boys, foi marcada pela dramaticidade, com o
+            São Paulo vencendo nos pênaltis e garantindo seu lugar na história como o primeiro clube brasileiro a erguer
+            a taça da Libertadores.</p>
+        </div>
+        <div class="box">
+          <img src="imagens/campeao1993.jpg">
+          <h4>Campeão Mundial 1993</h4>
+          <p>No ano seguinte à sua primeira conquista, o São Paulo voltou a brilhar na Copa Libertadores, reafirmando-se
+            como uma potência no cenário do futebol mundial. Sob a liderança do técnico Telê Santana e com um elenco
+            repleto de craques como Müller, Raí e Palhinha, o Tricolor Paulista demonstrou sua força e determinação ao
+            superar adversários formidáveis rumo à final. O confronto épico contra o Universidad Católica culminou em
+            mais uma vitória histórica para o São Paulo, que conquistou seu segundo título consecutivo na competição
+            sul-americana, consolidando-se como um dos grandes do continente.</p>
+        </div>
+        <div class="box">
+          <img src="imagens/campeao2005.jpg">
+          <h4>Campeão Mundial 2005</h4>
+          <p>Em 2005, o São Paulo alcançou o ápice de sua trajetória internacional ao conquistar a Copa do Mundo de
+            Clubes da FIFA, tornando-se campeão mundial pela primeira vez em sua história. Sob a orientação do técnico
+            Paulo Autuori e com um elenco talentoso liderado por ídolos como Rogério Ceni e Kaká, o Tricolor Paulista
+            demonstrou sua excelência em uma competição que reunia os melhores clubes do mundo. A final, contra o
+            poderoso Liverpool, foi marcada pela emoção e pela entrega dos jogadores são-paulinos, que garantiram uma
+            vitória histórica por 1 a 0, eternizando-se como campeões mundiais e consolidando o São Paulo como um dos
+            maiores clubes do futebol mundial.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="container">
+      <div class="text-section">
+          <h1>Sobre o Projeto</h1>
+          <p>Este projeto tem como finalidade mostrar um pouco da minha relação com o São Paulo Futebol Clube, encaixado em 3 objetivos de desnvolvimento sustentável da ONU,  </p>
+      </div>
+      <div class="image-section">
+          <img src="sua-imagem.jpg" alt="Descrição da imagem">
+      </div>
+  </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
+      <span class="version">v1.0.0</span>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<script>
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const scrollToSectionButton = document.getElementById('scrollToSection');
+    const targetSection = document.getElementById('targetSection');
+
+    scrollToSectionButton.addEventListener('click', function (event) {
+      event.preventDefault();
+      targetSection.scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+
+</script>
