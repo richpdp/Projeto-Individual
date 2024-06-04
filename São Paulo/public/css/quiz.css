@@ -142,7 +142,7 @@ body {
   #answers-box .btn-letter {
     font-size: 30px; /* Define o tamanho da fonte como 30px */
     font-weight: bold; /* Define a fonte como negrito */
-    background-color: #f2ff00; /* Define a cor de fundo como preta */
+    background-color: #ffee00; /* Define a cor de fundo como preta */
     border: none; /* Remove a borda */
     color: #fff; /* Define a cor do texto como branca */
     text-transform: uppercase; /* Transforma o texto em maiúsculas */
@@ -152,7 +152,7 @@ body {
     flex: 1 1 0; /* Define a flexibilidade dos itens */
     padding: 5px; /* Define o padding de 5px */
     max-width: 45px; /* Define a largura máxima como 45px */
-    border-radius: 10px;
+    border-radius: 10px; /*Deixa a borda arredondada*/
   }
   
   .question-answer {

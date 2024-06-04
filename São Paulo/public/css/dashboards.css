@@ -124,6 +124,7 @@ body {
   background-color: #ffffff;
   height: 100vh;
   overflow: auto;
+  margin-left: 100px;
 }
 
 .area-parametros-alerta {
@@ -194,7 +195,9 @@ body {
   height: 450px;
   width: 100%;
   align-items: center;
-  color: white;
+  color: rgb(0, 0, 0);
+  margin-left: 450px; 
+  padding: 20px;
 }
 
 .card-aquario {
