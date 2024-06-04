@@ -26,7 +26,7 @@
 
         <div class="header-left dash-header">
 
-            <h1>AquaTech</h1>
+            <h1>São Paulo <br>Fan Clube</h1>
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
@@ -37,14 +37,14 @@
             </div>
 
             <div class="btn-nav-white">
-                <a href="./bobia.html">
+                <a href="./grafico.html">
                     <h3>Gráficos</h3>
                 </a>
             </div>
 
             <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
+                <a href="./quiz.html">
+                    <h3>Quiz</h3>
                 </a>
             </div>
 
@@ -95,26 +95,10 @@
 
 </body>
 
-<script>
-
-    function exibirAquarios() {
-        JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
-            document.getElementById("cardAquarios").innerHTML += `
-                    <div class="card-aquario">
-                        <div class="title-aquario">
-                            <h1>${item.descricao}</h1>
-                        </div>
-                        <div class="desc-aquario">
-                        <div class="temperatura">
-                            <p id="temp_aquario_${item.id}">-°C</p>
-                        </div>
-                        <div class="cor-alerta" id="card_${item.id}"></div>
-                    </div>
-                    </div>
-                    `
-        });
-    }
-
-</script>
 
 </html>
+<script>
+
+
+
+</script>

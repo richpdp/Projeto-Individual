@@ -135,7 +135,6 @@ a {
   height: var(--tamanho-banner);
   color: white;
   background-image: url('../imagens/morumbis.jpg');
-
   background-size: cover;
 }
 
@@ -160,14 +159,9 @@ a {
   height: 300px;
   color: #000000;
   align-items: center;
-  /* background-color: #2c2c2c65; */
 }
 
 #banner #container p:hover {
-  /* font-weight: 1000;
-  font-size: xx-large;
-  width: 300px;
-  height: 300px; */
   color: #ff0000;
   transition: color 0.3s ease;
 }
@@ -206,21 +200,6 @@ a {
   padding: 20px;
 }
 
-
-
-
-/* body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f4f4f4;
-} */
-
-
 .text-section,
 .image-section {
   padding: 20px;
@@ -242,14 +221,6 @@ a {
   height: auto;
   border-radius: 8px;
 }
-
-
-
-
-
-
-
-
 
 /* FOOTER */
 
@@ -384,7 +355,7 @@ a {
   width: 230px;
   position: fixed;
   border-radius: 4px;
-  border: #e6005a 3px solid;
+  border: #ff0000 3px solid;
   padding: 10px;
   margin-right: 10%;
 }
@@ -420,7 +391,7 @@ input {
   font-size: 18px;
   padding: 10px 15px;
   color: white;
-  background-color: #e6005a;
+  background-color: #e60000;
   width: 120px;
   align-self: center;
   margin-top: 5px;
@@ -437,21 +408,10 @@ input {
   width: 50px;
 }
 
-/* SIMULADOR */
-
-.simulador {
-  color: white;
-}
-
-.simulador .container {
-  flex-direction: column;
-  overflow: scroll;
-  height: var(--tamanho-simulador);
-}
 
 /* ALERTA */
 
-#alerta {
+/* #alerta {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -508,4 +468,4 @@ input {
   100% {
     transform: rotate(25deg)
   }
-}
+} */
