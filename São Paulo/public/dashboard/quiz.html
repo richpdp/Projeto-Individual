@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AquaTech | Simulador</title>
+
+    <!-- <script src="./js/sessao.js"></script> -->
+
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="icon" href="imagens/icone_principal_sao_paulo.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="./css/quiz.css">
+</head>
+
+<body>
+
+    <!--header inicio-->
+    <div class="header">
+        <div class="container">
+            <h1 class="titulo">São Paulo Fan Clube</h1>
+            <ul class="navbar">
+                <li> <a href="./index.html" class="link_navbar">Inicial</a> </li>
+                <li class="agora" class="link_navbar"> Sobre </li>
+                <li><span style="color: black; padding: 10px;">|</span> </li>
+                <li> <a href="./login.html" class="link_navbar">Login</a> </li>
+                <li> <a href="./login.html" class="link_navbar">Cadastro</a> </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <h1>SPFC Quiz</h1>
+        </div>
+        <div class="quiz-body">
+            <div id="question-container" class="hide">
+                <div id="question">Question text</div>
+                <div id="answer-buttons" class="btn-container"></div>
+            </div>
+            <div class="controls">
+                <button id="start-btn" class="btn start-btn">Start</button>
+                <button id="next-btn" class="btn next-btn hide">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <!--footer inicio-->
+
+    <!--footer fim-->
+
+
+</body>
+
+</html>
+
+<script>
+
+    const startButton = document.getElementById('start-btn');
+    const nextButton = document.getElementById('next-btn');
+    const questionContainerElement = document.getElementById('question-container');
+    const questionElement = document.getElementById('question');
+    const answerButtonsElement = document.getElementById('answer-buttons');
+    
+    let shuffledQuestions, currentQuestionIndex;
+    
+    const questions = [
+        {
+            question: 'Qual é o estádio do SPFC?',
+            answers: [
+                { text: 'Morumbi', correct: true },
+                { text: 'Maracanã', correct: false },
+                { text: 'Mineirão', correct: false },
+                { text: 'Allianz Parque', correct: false }
+            ]
+        },
+        {
+            question: 'Quantas Libertadores o SPFC ganhou?',
+            answers: [
+                { text: '3', correct: true },
+                { text: '2', correct: false },
+                { text: '4', correct: false },
+                { text: '1', correct: false }
+            ]
+        },
+        {
+            question: 'Em que ano o SPFC foi fundado?',
+            answers: [
+                { text: '1933', correct: false },
+                { text: '1935', correct: false },
+                { text: '1938', correct: false },
+                { text: '1930', correct: true }
+            ]
+        },
+        {
+            question: 'Quantos títulos brasileiros o SPFC possui?',
+            answers: [
+                { text: '6', correct: true },
+                { text: '5', correct: false },
+                { text: '4', correct: false },
+                { text: '7', correct: false }
+            ]
+        },
+        {
+            question: 'Qual jogador é o maior artilheiro da história do SPFC?',
+            answers: [
+                { text: 'Careca', correct: false },
+                { text: 'Rogério Ceni', correct: false },
+                { text: 'Raí', correct: false },
+                { text: 'Luis Fabiano', correct: true }
+            ]
+        },
+        {
+            question: 'Qual é o apelido do estádio do SPFC?',
+            answers: [
+                { text: 'Morumbi', correct: false },
+                { text: 'Cícero Pompeu de Toledo', correct: false },
+                { text: 'Panetone', correct: true },
+                { text: 'Gigante da Pampulha', correct: false }
+            ]
+        },
+        {
+            question: 'Em que ano o SPFC conquistou seu primeiro título mundial?',
+            answers: [
+                { text: '1992', correct: true },
+                { text: '1993', correct: false },
+                { text: '2005', correct: false },
+                { text: '1994', correct: false }
+            ]
+        },
+        {
+            question: 'Qual técnico comandou o SPFC na conquista do Mundial de Clubes em 2005?',
+            answers: [
+                { text: 'Muricy Ramalho', correct: false },
+                { text: 'Telê Santana', correct: false },
+                { text: 'Paulo Autuori', correct: true },
+                { text: 'Ricardo Gomes', correct: false }
+            ]
+        },
+        {
+            question: 'Qual jogador é conhecido como o “Mito” do SPFC?',
+            answers: [
+                { text: 'Raí', correct: false },
+                { text: 'Careca', correct: false },
+                { text: 'Cafú', correct: false },
+                { text: 'Rogério Ceni', correct: true }
+            ]
+        },
+        {
+            question: 'Quantos títulos da Copa Sul-Americana o SPFC possui?',
+            answers: [
+                { text: '1', correct: true },
+                { text: '2', correct: false },
+                { text: '3', correct: false },
+                { text: '4', correct: false }
+            ]
+        }
+    
+    ];
+    
+    startButton.addEventListener('click', startGame);
+    nextButton.addEventListener('click', () => {
+        currentQuestionIndex++;
+        setNextQuestion();
+    });
+    
+    function startGame() {
+        startButton.classList.add('hide');
+        shuffledQuestions = questions.sort(() => Math.random() - 0.5);
+        currentQuestionIndex = 0;
+        questionContainerElement.classList.remove('hide');
+        setNextQuestion();
+    }
+    
+    function setNextQuestion() {
+        resetState();
+        showQuestion(shuffledQuestions[currentQuestionIndex]);
+    }
+    
+    function showQuestion(question) {
+        questionElement.innerText = question.question;
+        question.answers.forEach(answer => {
+            const button = document.createElement('button');
+            button.innerText = answer.text;
+            button.classList.add('btn', 'btn-answer');
+            if (answer.correct) {
+                button.dataset.correct = answer.correct;
+            }
+            button.addEventListener('click', selectAnswer);
+            answerButtonsElement.appendChild(button);
+        });
+    }
+    
+    function resetState() {
+        clearStatusClass(document.body);
+        nextButton.classList.add('hide');
+        while (answerButtonsElement.firstChild) {
+            answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+        }
+    }
+    
+    function selectAnswer(e) {
+        const selectedButton = e.target;
+        const correct = selectedButton.dataset.correct;
+        setStatusClass(document.body, correct);
+        Array.from(answerButtonsElement.children).forEach(button => {
+            setStatusClass(button, button.dataset.correct);
+        });
+        if (shuffledQuestions.length > currentQuestionIndex + 1) {
+            nextButton.classList.remove('hide');
+        } else {
+            startButton.innerText = 'Recomeçar';
+            startButton.classList.remove('hide');
+        }
+    }
+    
+    function setStatusClass(element, correct) {
+        clearStatusClass(element);
+        if (correct) {
+            element.classList.add('correct');
+        } else {
+            element.classList.add('wrong');
+        }
+    }
+    
+    function clearStatusClass(element) {
+        element.classList.remove('correct');
+        element.classList.remove('wrong');
+    }
+    
+    
+    </script>

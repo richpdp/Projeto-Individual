@@ -19,10 +19,10 @@
   <div class="header">
     <div class="container">
       <!-- <img src="imagens/icone_principal_sao_paulo.png" style="width: 50px; height: 50px;"> -->
-      <a class="titulo" href="/">São Paulo Fan Clube</a>
+      <a class="titulo" href="/" id="scrollToSection">São Paulo Fan Clube</a>
       <ul class="navbar">
-        <li class="agora"><a href="#" class="link_navbar" id="scrollToSection">Inicial</a></li>
-        <li><a href="/" class="link_navbar">Sobre </a></li>
+        <li class="agora"><a href="#" class="link_navbar" id="rolarParaASessão">Inicial</a></li>
+        <li><span class="link_navbar" id="rolarSessãoSobre">Sobre </span></li>
         <li><span style="color: black; padding: 10px;">|</span></li>
         <li><a href="login.html" class="link_navbar">Login</a></li>
         <li><a href="cadastro.html" class="link_navbar">Cadastro</a></li>
@@ -30,13 +30,13 @@
     </div>
   </div>
 
-  <div class="banner" id="targetSection">
-    <div class="container">
-      <span class="banner-title"><span class="frase_inicio">Nas arquibancadas <br> ecoa a <a
-            class="palavra_frase_inicio" href="/">paixão</a>, <br> no gramado <br> se escreve a <br> <a
-            class="palavra_frase_inicio"
-            href="https://www.futfanatics.com.br/almanaquesaopaulo#:~:text=A%20História,-do%20SPFC&text=O%20tricolor%20paulista%20surgiu%20através,Floresta%2C%20como%20muitos%20o%20chamavam.">história</a>.
-        </span></span>
+  <div id="sessãoEscolhida">
+    <div class="banner" id="targetSection">
+      <div class="container">
+        <span class="banner-title"><span class="frase_inicio">Nas arquibancadas <br> ecoa a paixão, <br> no gramado <br>
+            se escreve a <br>história.
+          </span></span>
+      </div>
     </div>
   </div>
 
@@ -81,19 +81,28 @@
   <div>
     <div class="container">
       <div class="text-section">
-          <h1>Sobre o Projeto</h1>
-          <p>Este projeto tem como finalidade mostrar um pouco da minha relação com o São Paulo Futebol Clube, encaixado em 3 objetivos de desnvolvimento sustentável da ONU,  </p>
+        <h1 style="display: flex; justify-content: center;">Sobre o Projeto</h1>
+        <p>O São Paulo Futebol Clube sempre foi mais do que apenas um time para mim. Desde a infância, as cores
+          vermelho, branco e preto não representavam apenas um uniforme, mas sim uma parte essencial da minha identidade
+          e da minha história. Lembro-me de como os domingos eram sagrados em minha casa, com a família toda reunida na
+          sala, olhos fixos na televisão, esperando o momento em que o Tricolor entraria em campo.
+          <br><br>
+          Minha relação com o SPFC é uma mistura de orgulho e emoção. Cada gol marcado, cada defesa épica, cada título
+          conquistado ecoa no meu coração como uma celebração pessoal. As vitórias são momentos de êxtase e alegria
+          indescritível, enquanto as derrotas, por mais dolorosas que sejam, reforçam meu amor incondicional pelo
+          Tricolor. Este time não é apenas uma paixão, mas uma parte vital de quem sou, uma ligação eterna que
+          continuará a pulsar em minhas veias.
+        </p>
       </div>
       <div class="image-section">
-          <img src="sua-imagem.jpg" alt="Descrição da imagem">
+        <img src="imagens/maio2024.jpeg" alt="Descrição da imagem" id="sessãoEscolhidaSobre">
       </div>
-  </div>
+    </div>
   </div>
 
   <div class="footer">
     <div class="container">
       <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-      <span class="version">v1.0.0</span>
     </div>
   </div>
 </body>
@@ -105,6 +114,32 @@
   document.addEventListener("DOMContentLoaded", function () {
     const scrollToSectionButton = document.getElementById('scrollToSection');
     const targetSection = document.getElementById('targetSection');
+
+    scrollToSectionButton.addEventListener('click', function (event) {
+      event.preventDefault();
+      targetSection.scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const scrollToSectionButton = document.getElementById('rolarParaASessão');
+    const targetSection = document.getElementById('sessãoEscolhida');
+
+    scrollToSectionButton.addEventListener('click', function (event) {
+      event.preventDefault();
+      targetSection.scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const scrollToSectionButton = document.getElementById('rolarSessãoSobre');
+    const targetSection = document.getElementById('sessãoEscolhidaSobre');
 
     scrollToSectionButton.addEventListener('click', function (event) {
       event.preventDefault();
