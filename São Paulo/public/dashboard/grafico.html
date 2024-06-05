@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./../css/estilo.css" />
     <script src="../js/sessao.js"></script>
     <script src="./../js/alerta.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
@@ -72,85 +73,72 @@
             <canvas id="dht11Umidade"></canvas>
         </div> -->
 
-        <!-- <h1>Sensor DHT 11 - Umidade</h1> -->
-        <section style="width:50%">
-            <canvas id="dht11Umidade"></canvas>
-        </section>
-
-</body>
+        <div style="height: 400px; width: 800px; margin-top: 25vh; margin-left: 25vw;">
+            <canvas id="myChart"></canvas>
+        </div>
+        < </body>
 
 </html>
 
+
 <script>
-    /* -- dht11Umidade -- */
-    var contextoDht11Umidade = document.getElementById('dht11Umidade').getContext('2d');
-    // contextoDht11Umidade.canvas.width = 1000;
-    // contextoDht11Umidade.canvas.height = 300;
-    var dht11Umidade = new Chart(
-        contextoDht11Umidade,
-        {
-            type: 'line',
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO
+    // window.onload = graficosDash();
+    window.onload = dadosDash();
+
+    const ctx = document.getElementById('myChart');
+
+    var myChart1;
+    var usuarios = []
+    var pontos = []
+
+    function graficosDash() {
+        new Chart(ctx, {
+            type: 'bar',
             data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
                 datasets: [{
-                    label: 'Umidade',
-                    type: 'line',
-                    borderColor: ['#000000'],
-                    backgroundColor: ['#ff0000']
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    borderWidth: 1,
+                    backgroundColor: 'red'
                 }]
             },
             options: {
                 scales: {
-                    xAxes: [{
-                        distribution: 'series',
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }],
-                    yAxes: [{
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Umidade'
-                        },
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                },
-                animation: {
-                    duration: 0
+                    y: {
+                        beginAtZero: true
+                    }
                 }
             }
-        }
-    );
+        });
 
-    var paginacao = {};
-    var tempo = {};
-    function obterDados(grafico, endpoint) {
-        var http = new XMLHttpRequest();
-        http.open('GET', 'http://localhost:3300/sensores/' + endpoint, false);
-        http.send(null);
-        var valores = JSON.parse(http.responseText);
-        if (paginacao[endpoint] == null) {
-            paginacao[endpoint] = 0;
-        }
-        if (tempo[endpoint] == null) {
-            tempo[endpoint] = 0;
-        }
-        // Exibir à partir do último elemento exibido anteriormente
-        var ultimaPaginacao = paginacao[endpoint];
-        paginacao[endpoint] = valores.length;
-        var valores = valores.slice(ultimaPaginacao);
-        valores.forEach((valor) => {
-            //Máximo de 60 itens exibidos no gráfico
-            if (grafico.data.labels.length == 10 && grafico.data.datasets[0].data.length == 10) {
-                grafico.data.labels.shift();
-                grafico.data.datasets[0].data.shift();
-            }
+    }
 
-            grafico.data.labels.push(tempo[endpoint]++);
-            grafico.data.datasets[0].data.push(parseFloat(valor));
-            grafico.update();
+
+
+    function dadosDash() {
+        fetch("/quiz/rank", {
+            method: "POST", // Define o método HTTP como POST
+            headers: {
+                "Content-Type": "application/json", // Define o tipo de conteúdo como JSON
+            },
+            body: JSON.stringify({
+            })
         })
+            .then(function (resposta) {
+                console.log("resposta: ", resposta); // Exibe a resposta no console
+
+                if (resposta.ok) {
+                    console.log("Dados do banco")
+                    console.log(JSON.stringify(resposta))
+                } else {
+                    throw "Houve um erro ao tentar realizar o cadastro!"; // Lança um erro se a resposta não estiver OK
+                }
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`); // Exibe o erro no console
+            });
     }
 
 </script>

@@ -2,128 +2,126 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SPFC | QUIZ </title>
+  <title>SPFC | QUIZ </title>
 
-    <!-- <script src="./js/sessao.js"></script> -->
+  <!-- <script src="./js/sessao.js"></script> -->
 
-    <link rel="stylesheet" href="../css/estilo.css">
-    <link rel="icon" href="../imagens/icone_principal_sao_paulo.png">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="../css/quiz.css">
-    <link rel="stylesheet" href="../css/dashboards.css">
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../imagens/icone_principal_sao_paulo.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="../css/quiz.css">
+  <link rel="stylesheet" href="../css/dashboards.css">
 </head>
 
 <body onload="validarSessao(), exibirAquarios(),  atualizacaoPeriodica()">
 
-    <div class="janela">
+  <div class="janela">
 
-        <div class="header-left dash-header">
+    <div class="header-left dash-header">
 
-            <h1>São Paulo <br>Fan Clube</h1>
+      <h1>São Paulo <br>Fan Clube</h1>
 
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-            </div>
+      <div class="hello">
+        <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+      </div>
 
-            <div class="btn-nav-white">
-                <a href="onu.html">
-                    <h3>ONU</h3>
-                </a>
-                
-            </div>
+      <div class="btn-nav-white">
+        <a href="onu.html">
+          <h3>ONU</h3>
+        </a>
 
-            <div class="btn-nav-white">
-                <a href="./grafico.html">
-                    <h3>Gráficos</h3>
-                </a>
-            </div>
+      </div>
 
-            <div class="btn-nav">
-                <a href="./mural.html">
-                    <h3>Quiz</h3>
-                </a>
-            </div>
+      <div class="btn-nav-white">
+        <a href="./grafico.html">
+          <h3>Gráficos</h3>
+        </a>
+      </div>
 
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
-            </div>
+      <div class="btn-nav">
+        <a href="./mural.html">
+          <h3>Quiz</h3>
+        </a>
+      </div>
 
-        </div>
+      <div class="btn-logout" onclick="limparSessao()">
+        <h3>Sair</h3>
+      </div>
+
+    </div>
 
     <div class="container">
-        <!-- Contêiner principal -->
-      
-        <header>
-          <!-- Cabeçalho do quizz -->
-          <h1>
-            <div id="div_nome"></div>
-            <!-- Div para exibir o nome do usuário -->
-          </h1>
-          <br>
-          <h1>Olá Fan, faça o seu quiz:</h1>
-          <!-- Título do quizz -->
-        </header>
-      
-        <main>
-          <!-- Seção principal -->
-      
-          <!-- QUIZZ CONTAINER -->
-          <div id="quizz-container">
-            <!-- Contêiner do quizz onde as perguntas e respostas são exibidas -->
-            <p id="question">
-              <span id="question-number">1</span> &#8212;
-              <!-- Exibe o número da pergunta -->
-              <span id="question-text">Qual é a unidade de medida para metros?</span>
-              <!-- Exibe o texto da pergunta -->
-            </p>
-      
-            <div id="answers-box">
-              <!-- Contêiner para as respostas -->
-              <button>
-                <span class="btn-letter"></span> <span class="question-answer"></span>
-                <!-- Botão para a resposta com a letra e o texto da resposta -->
-              </button>
-              <button>
-                <span class="btn-letter"></span> <span class="question-answer"></span>
-              </button>
-              <button>
-                <span class="btn-letter"></span> <span class="question-answer"></span>
-              </button>
-              <button>
-                <span class="btn-letter"></span> <span class="question-answer"></span>
-              </button>
-            </div>
+      <!-- Contêiner principal -->
+
+      <header>
+        <!-- Cabeçalho do quizz -->
+        <h1>
+          <div id="div_nome"></div>
+          <!-- Div para exibir o nome do usuário -->
+        </h1>
+        <br>
+        <h1>Olá Fan, faça o seu quiz:</h1>
+        <!-- Título do quizz -->
+      </header>
+
+      <main>
+        <!-- Seção principal -->
+
+        <!-- QUIZZ CONTAINER -->
+        <div id="quizz-container">
+          <!-- Contêiner do quizz onde as perguntas e respostas são exibidas -->
+          <p id="question">
+            <span id="question-number">1</span> &#8212;
+            <!-- Exibe o número da pergunta -->
+            <span id="question-text">Qual é a unidade de medida para metros?</span>
+            <!-- Exibe o texto da pergunta -->
+          </p>
+
+          <div id="answers-box">
+            <!-- Contêiner para as respostas -->
+            <button>
+              <span class="btn-letter"></span> <span class="question-answer"></span>
+              <!-- Botão para a resposta com a letra e o texto da resposta -->
+            </button>
+            <button>
+              <span class="btn-letter"></span> <span class="question-answer"></span>
+            </button>
+            <button>
+              <span class="btn-letter"></span> <span class="question-answer"></span>
+            </button>
+            <button>
+              <span class="btn-letter"></span> <span class="question-answer"></span>
+            </button>
           </div>
-      
-          <!-- SCORE BOARD -->
-          <div id="score-container" class="hide">
-            <!-- Contêiner da pontuação, inicialmente escondido -->
-            <h2>Parabéns</h2>
-            <!-- Mensagem de parabéns -->
-            <p id="display-score"><span>90</span>%</p>
-            <!-- Exibe a pontuação do usuário -->
-            <p>
-              Você acertou <span id="correct-answers">0</span> de
-              <!-- Número de respostas corretas -->
-              <span id="questions-qty">10</span> perguntas
-              <!-- Total de perguntas -->
-            </p>
-            <button id="restart">Refazer quiz!</button>
-            <!-- Botão para reiniciar o quizz -->
-          </div>
-      
-          <!-- TEMPLATE RESPOSTA -->
-          <button class="answer-template hide">
-            <!-- Template de resposta, inicialmente escondido -->
-            <span class="btn-letter"></span> <span class="question-answer"></span>
-            <!-- Letra da resposta e texto da resposta -->
-          </button>
-        </main>
-      </div>
+        </div>
+
+        <!-- SCORE BOARD -->
+        <div id="score-container" class="hide">
+          <!-- Contêiner da pontuação, inicialmente escondido -->
+          <h2>Parabéns</h2>
+          <!-- Mensagem de parabéns -->
+          <p id="display-score"><span>90</span>%</p>
+          <!-- Exibe a pontuação do usuário -->
+          <p>
+            Você acertou <span id="correct-answers">0</span> de
+            <!-- Número de respostas corretas -->
+            <span id="questions-qty">10</span> perguntas
+            <!-- Total de perguntas -->
+          </p>
+        </div>
+
+        <!-- TEMPLATE RESPOSTA -->
+        <button class="answer-template hide">
+          <!-- Template de resposta, inicialmente escondido -->
+          <span class="btn-letter"></span> <span class="question-answer"></span>
+          <!-- Letra da resposta e texto da resposta -->
+        </button>
+      </main>
+    </div>
 
     <!--footer inicio-->
 
@@ -135,269 +133,258 @@
 </html>
 
 <script>
+b_usuario.innerHTML = sessionStorage.NOME_USUARIO
+  // declaração de variáveis
+  const question = document.querySelector('#question'); // Seleciona o elemento com id 'question' para exibir a pergunta
+  const answerBox = document.querySelector('#answers-box'); // Seleciona o elemento com id 'answers-box' para exibir as respostas
+  const quizzContainer = document.querySelector('#quizz-container'); // Seleciona o elemento com id 'quizz-container' que contém o quiz
+  const scoreContainer = document.querySelector('#score-container'); // Seleciona o elemento com id 'score-container' que contém a pontuação
+  const letters = ['a', 'b', 'c', 'd', 'e']; // Array de letras para identificação das respostas
+  let points = 0; // Variável para armazenar a pontuação do usuário
+  let actualQuestion = 0; // Variável para armazenar o índice da pergunta atual
+  let idUsuario = sessionStorage.ID_USUARIO // Recupera o ID do usuário do sessionStorage
 
-// declaração de variáveis
-const question = document.querySelector('#question'); // Seleciona o elemento com id 'question' para exibir a pergunta
-const answerBox = document.querySelector('#answers-box'); // Seleciona o elemento com id 'answers-box' para exibir as respostas
-const quizzContainer = document.querySelector('#quizz-container'); // Seleciona o elemento com id 'quizz-container' que contém o quiz
-const scoreContainer = document.querySelector('#score-container'); // Seleciona o elemento com id 'score-container' que contém a pontuação
-const letters = ['a', 'b', 'c', 'd', 'e']; // Array de letras para identificação das respostas
-let points = 0; // Variável para armazenar a pontuação do usuário
-let actualQuestion = 0; // Variável para armazenar o índice da pergunta atual
-let idUsuario = sessionStorage.ID_USUARIO // Recupera o ID do usuário do sessionStorage
-
-// perguntas
-const questions = [
-  {
+  // perguntas
+  const questions = [
+    {
       question: 'Qual é o estádio do SPFC?',
       answers: [
-          { answer: 'Morumbi', correct: true },
-          { answer: 'Maracanã', correct: false },
-          { answer: 'Mineirão', correct: false },
-          { answer: 'Allianz Parque', correct: false }
+        { answer: 'Morumbi', correct: true },
+        { answer: 'Maracanã', correct: false },
+        { answer: 'Mineirão', correct: false },
+        { answer: 'Allianz Parque', correct: false }
       ]
-  },
-  {
+    },
+    {
       question: 'Quantas Libertadores o SPFC ganhou?',
       answers: [
-          { answer: '3', correct: true },
-          { answer: '2', correct: false },
-          { answer: '4', correct: false },
-          { answer: '1', correct: false }
+        { answer: '3', correct: true },
+        { answer: '2', correct: false },
+        { answer: '4', correct: false },
+        { answer: '1', correct: false }
       ]
-  },
-  {
+    },
+    {
       question: 'Em que ano o SPFC foi fundado?',
       answers: [
-          { answer: '1933', correct: false },
-          { answer: '1935', correct: false },
-          { answer: '1938', correct: false },
-          { answer: '1930', correct: true }
+        { answer: '1933', correct: false },
+        { answer: '1935', correct: false },
+        { answer: '1938', correct: false },
+        { answer: '1930', correct: true }
       ]
-  },
-  {
+    },
+    {
       question: 'Quantos títulos brasileiros o SPFC possui?',
       answers: [
-          { answer: '6', correct: true },
-          { answer: '5', correct: false },
-          { answer: '4', correct: false },
-          { answer: '7', correct: false }
+        { answer: '6', correct: true },
+        { answer: '5', correct: false },
+        { answer: '4', correct: false },
+        { answer: '7', correct: false }
       ]
-  },
-  {
+    },
+    {
       question: 'Qual jogador é o maior artilheiro da história do SPFC?',
       answers: [
-          { answer: 'Careca', correct: false },
-          { answer: 'Rogério Ceni', correct: false },
-          { answer: 'Raí', correct: false },
-          { answer: 'Luis Fabiano', correct: true }
+        { answer: 'Careca', correct: false },
+        { answer: 'Rogério Ceni', correct: false },
+        { answer: 'Raí', correct: false },
+        { answer: 'Luis Fabiano', correct: true }
       ]
-  },
-  {
+    },
+    {
       question: 'Qual é o apelido do estádio do SPFC?',
       answers: [
-          { answer: 'Morumbi', correct: false },
-          { answer: 'Cícero Pompeu de Toledo', correct: false },
-          { answer: 'Panetone', correct: true },
-          { answer: 'Gigante da Pampulha', correct: false }
+        { answer: 'Morumbi', correct: false },
+        { answer: 'Cícero Pompeu de Toledo', correct: false },
+        { answer: 'Panetone', correct: true },
+        { answer: 'Gigante da Pampulha', correct: false }
       ]
-  },
-  {
+    },
+    {
       question: 'Em que ano o SPFC conquistou seu primeiro título mundial?',
       answers: [
-          { answer: '1992', correct: true },
-          { answer: '1993', correct: false },
-          { answer: '2005', correct: false },
-          { answer: '1994', correct: false }
+        { answer: '1992', correct: true },
+        { answer: '1993', correct: false },
+        { answer: '2005', correct: false },
+        { answer: '1994', correct: false }
       ]
-  },
-  {
+    },
+    {
       question: 'Qual técnico comandou o SPFC na conquista do Mundial de Clubes em 2005?',
       answers: [
-          { answer: 'Muricy Ramalho', correct: false },
-          { answer: 'Telê Santana', correct: false },
-          { answer: 'Paulo Autuori', correct: true },
-          { answer: 'Ricardo Gomes', correct: false }
+        { answer: 'Muricy Ramalho', correct: false },
+        { answer: 'Telê Santana', correct: false },
+        { answer: 'Paulo Autuori', correct: true },
+        { answer: 'Ricardo Gomes', correct: false }
       ]
-  },
-  {
+    },
+    {
       question: 'Qual jogador é conhecido como o “Mito” do SPFC?',
       answers: [
-          { answer: 'Raí', correct: false },
-          { answer: 'Careca', correct: false },
-          { answer: 'Cafú', correct: false },
-          { answer: 'Rogério Ceni', correct: true }
+        { answer: 'Raí', correct: false },
+        { answer: 'Careca', correct: false },
+        { answer: 'Cafú', correct: false },
+        { answer: 'Rogério Ceni', correct: true }
       ]
-  },
-  {
+    },
+    {
       question: 'Quantos títulos da Copa Sul-Americana o SPFC possui?',
       answers: [
-          { answer: '1', correct: true },
-          { answer: '2', correct: false },
-          { answer: '3', correct: false },
-          { answer: '4', correct: false }
+        { answer: '1', correct: true },
+        { answer: '2', correct: false },
+        { answer: '3', correct: false },
+        { answer: '4', correct: false }
       ]
+    }
+
+  ];
+
+  // substituição do quizz para a primeira pergunta
+  function init() {
+    // criar primeira pergunta
+    createQuestion(0); // Chama a função createQuestion para criar a primeira pergunta
   }
 
-];
-
-// substituição do quizz para a primeira pergunta
-function init() {
-  // criar primeira pergunta
-  createQuestion(0); // Chama a função createQuestion para criar a primeira pergunta
-}
-
-// cria uma pergunta
-function createQuestion(i) {
-  // limpar questão anterior
-  const oldButtons = answerBox.querySelectorAll('button'); // Seleciona todos os botões de resposta anteriores
-  oldButtons.forEach((btn) => {
-    btn.remove(); // Remove todos os botões de resposta anteriores
-  });
-
-  // alterar texto da pergunta
-  const questionText = question.querySelector('#question-text'); // Seleciona o elemento com id 'question-text' para alterar o texto da pergunta
-  const questionNumber = question.querySelector('#question-number'); // Seleciona o elemento com id 'question-number' para alterar o número da pergunta
-
-  questionText.textContent = questions[i].question; // Define o texto da pergunta atual
-  questionNumber.textContent = i + 1; // Define o número da pergunta atual
-
-  // inserir alternativas
-  questions[i].answers.forEach((answer, i) => {
-    // cria template botão quizz
-    const answerTemplate = document.querySelector('.answer-template').cloneNode(true); // Clona o template de resposta
-
-    const letterBtn = answerTemplate.querySelector('.btn-letter'); // Seleciona o elemento com a classe 'btn-letter'
-    const answerText = answerTemplate.querySelector('.question-answer'); // Seleciona o elemento com a classe 'question-answer'
-
-    letterBtn.textContent = letters[i]; // Define a letra da resposta
-    answerText.textContent = answer['answer']; // Define o texto da resposta
-
-    answerTemplate.setAttribute('correct-answer', answer['correct']); // Define o atributo 'correct-answer' com base se a resposta está correta ou não
-
-    // remover hide e template class
-    answerTemplate.classList.remove('hide'); // Remove a classe 'hide' do template de resposta
-    answerTemplate.classList.remove('answer-template'); // Remove a classe 'answer-template' do template de resposta
-
-    // inserir alternativa na tela
-    answerBox.appendChild(answerTemplate); // Adiciona o template de resposta ao 'answerBox'
-
-    // inserir evento click no botão
-    answerTemplate.addEventListener('click', function () {
-      checkAnswer(this); // Adiciona um evento de clique ao template de resposta para verificar a resposta
+  // cria uma pergunta
+  function createQuestion(i) {
+    // limpar questão anterior
+    const oldButtons = answerBox.querySelectorAll('button'); // Seleciona todos os botões de resposta anteriores
+    oldButtons.forEach((btn) => {
+      btn.remove(); // Remove todos os botões de resposta anteriores
     });
-  });
 
-  // incrementar o número da questão
-  actualQuestion++; // Incrementa o número da questão atual
-}
+    // alterar texto da pergunta
+    const questionText = question.querySelector('#question-text'); // Seleciona o elemento com id 'question-text' para alterar o texto da pergunta
+    const questionNumber = question.querySelector('#question-number'); // Seleciona o elemento com id 'question-number' para alterar o número da pergunta
 
-// verificar resposta do usuário
-function checkAnswer(btn) {
-  // seleciona todos os botões
-  const buttons = answerBox.querySelectorAll('button'); // Seleciona todos os botões de resposta
+    questionText.textContent = questions[i].question; // Define o texto da pergunta atual
+    questionNumber.textContent = i + 1; // Define o número da pergunta atual
 
-  // verifica se resposta correta e add classe
-  buttons.forEach((button) => {
-    if (button.getAttribute('correct-answer') == 'true') {
-      button.classList.add('correct-answer'); // Adiciona a classe 'correct-answer' ao botão correto
+    // inserir alternativas
+    questions[i].answers.forEach((answer, i) => {
+      // cria template botão quizz
+      const answerTemplate = document.querySelector('.answer-template').cloneNode(true); // Clona o template de resposta
 
-      // checa se usuário acertou a pergunta
-      if (btn === button) {
-        // incremento dos pontos
-        points++; // Incrementa a pontuação do usuário se a resposta estiver correta
+      const letterBtn = answerTemplate.querySelector('.btn-letter'); // Seleciona o elemento com a classe 'btn-letter'
+      const answerText = answerTemplate.querySelector('.question-answer'); // Seleciona o elemento com a classe 'question-answer'
+
+      letterBtn.textContent = letters[i]; // Define a letra da resposta
+      answerText.textContent = answer['answer']; // Define o texto da resposta
+
+      answerTemplate.setAttribute('correct-answer', answer['correct']); // Define o atributo 'correct-answer' com base se a resposta está correta ou não
+
+      // remover hide e template class
+      answerTemplate.classList.remove('hide'); // Remove a classe 'hide' do template de resposta
+      answerTemplate.classList.remove('answer-template'); // Remove a classe 'answer-template' do template de resposta
+
+      // inserir alternativa na tela
+      answerBox.appendChild(answerTemplate); // Adiciona o template de resposta ao 'answerBox'
+
+      // inserir evento click no botão
+      answerTemplate.addEventListener('click', function () {
+        checkAnswer(this); // Adiciona um evento de clique ao template de resposta para verificar a resposta
+      });
+    });
+
+    // incrementar o número da questão
+    actualQuestion++; // Incrementa o número da questão atual
+  }
+
+  // verificar resposta do usuário
+  function checkAnswer(btn) {
+    // seleciona todos os botões
+    const buttons = answerBox.querySelectorAll('button'); // Seleciona todos os botões de resposta
+
+    // verifica se resposta correta e add classe
+    buttons.forEach((button) => {
+      if (button.getAttribute('correct-answer') == 'true') {
+        button.classList.add('correct-answer'); // Adiciona a classe 'correct-answer' ao botão correto
+
+        // checa se usuário acertou a pergunta
+        if (btn === button) {
+          // incremento dos pontos
+          points++; // Incrementa a pontuação do usuário se a resposta estiver correta
+        }
+      } else {
+        button.classList.add('wrong-answer'); // Adiciona a classe 'wrong-answer' aos botões incorretos
       }
-    } else {
-      button.classList.add('wrong-answer'); // Adiciona a classe 'wrong-answer' aos botões incorretos
-    }
-  });
+    });
 
-  // exibir próxima pergunta
-  nextQuestion(); // Chama a função nextQuestion para exibir a próxima pergunta
-}
+    // exibir próxima pergunta
+    nextQuestion(); // Chama a função nextQuestion para exibir a próxima pergunta
+  }
 
-// exibe a próxima pergunta no quizz
-function nextQuestion() {
-  // timer para usuário ver as respostas
-  setTimeout(function () {
-    // verifica se ainda há perguntas
-    if (actualQuestion >= questions.length) {
-      // apresenta mensagem de sucesso
-      showSuccessMessage(); // Chama a função showSuccessMessage se não houver mais perguntas
-      return;
-    }
+  // exibe a próxima pergunta no quizz
+  function nextQuestion() {
+    // timer para usuário ver as respostas
+    setTimeout(function () {
+      // verifica se ainda há perguntas
+      if (actualQuestion >= questions.length) {
+        // apresenta mensagem de sucesso
+        showSuccessMessage(); // Chama a função showSuccessMessage se não houver mais perguntas
+        return;
+      }
 
-    createQuestion(actualQuestion); // Chama a função createQuestion para criar a próxima pergunta
-  }, 1200); // Define um timer de 1200ms antes de exibir a próxima pergunta
-}
+      createQuestion(actualQuestion); // Chama a função createQuestion para criar a próxima pergunta
+    }, 1200); // Define um timer de 1200ms antes de exibir a próxima pergunta
+  }
 
-// exibe a tela final
-function showSuccessMessage() {
-  hideOrShowQuizz(); // Chama a função hideOrShowQuizz para esconder o quiz e mostrar a pontuação
+  // exibe a tela final
+  function showSuccessMessage() {
+    hideOrShowQuizz(); // Chama a função hideOrShowQuizz para esconder o quiz e mostrar a pontuação
 
-  // trocar dados tela de sucesso
-  // calcular score
-  const score = ((points / questions.length) * 100).toFixed(2); // Calcula a pontuação do usuário
-  // d.innerHTML = score
+    // trocar dados tela de sucesso
+    // calcular score
+    const score = ((points / questions.length) * 100).toFixed(2); // Calcula a pontuação do usuário
+    // d.innerHTML = score
 
-  const displayScore = document.querySelector('#display-score span'); // Seleciona o elemento que exibe a pontuação
-  displayScore.textContent = score.toString(); // Define o texto da pontuação calculada
+    const displayScore = document.querySelector('#display-score span'); // Seleciona o elemento que exibe a pontuação
+    displayScore.textContent = score.toString(); // Define o texto da pontuação calculada
 
-  //alterar o número de perguntas corretas
-  const correctAnswers = document.querySelector('#correct-answers'); // Seleciona o elemento que exibe o número de respostas corretas
-  correctAnswers.textContent = points; // Define o texto com o número de respostas corretas
+    //alterar o número de perguntas corretas
+    const correctAnswers = document.querySelector('#correct-answers'); // Seleciona o elemento que exibe o número de respostas corretas
+    correctAnswers.textContent = points; // Define o texto com o número de respostas corretas
 
-  // alterar o total de perguntas
-  const totalQuestions = document.querySelector('#questions-qty'); // Seleciona o elemento que exibe o total de perguntas
-  totalQuestions.textContent = questions.length; // Define o texto com o total de perguntas
+    // alterar o total de perguntas
+    const totalQuestions = document.querySelector('#questions-qty'); // Seleciona o elemento que exibe o total de perguntas
+    totalQuestions.textContent = questions.length; // Define o texto com o total de perguntas
 
-  let total = score
-  sessionStorage.TOTAL_USUARIO = total
+    let total = score
+    sessionStorage.TOTAL_USUARIO = total
 
-  fetch("/quiz/cadastrar", {
-    method: "POST", // Define o método HTTP como POST
-    headers: {
-      "Content-Type": "application/json", // Define o tipo de conteúdo como JSON
-    },
-    body: JSON.stringify({
-      // crie um atributo que recebe o valor recuperado aqui
-      // Agora vá para o arquivo routes/usuario.js
-      usuarioIdserver: idUsuario, // Atribui o ID do usuário ao atributo 'usuarioIdserver'
-      scoreServer: points // Atribui a pontuação ao atributo 'scoreServer'
-    }),
-  })
-  .then(function (resposta) {
-    console.log("resposta: ", resposta); // Exibe a resposta no console
+    fetch("/quiz/cadastrar", {
+      method: "POST", // Define o método HTTP como POST
+      headers: {
+        "Content-Type": "application/json", // Define o tipo de conteúdo como JSON
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        usuarioIdserver: idUsuario, // Atribui o ID do usuário ao atributo 'usuarioIdserver'
+        scoreServer: points // Atribui a pontuação ao atributo 'scoreServer'
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta); // Exibe a resposta no console
 
-    if (resposta.ok) {
-      setTimeout(() => {
-        window.location = "dashboard.html"; // Redireciona para a página do dashboard após 1000ms
-      }, "1000");
-    } else {
-      throw "Houve um erro ao tentar realizar o cadastro!"; // Lança um erro se a resposta não estiver OK
-    }
-  })
-  .catch(function (resposta) {
-    console.log(`#ERRO: ${resposta}`); // Exibe o erro no console
-  });
-}
+        if (resposta.ok) {
+          console.log("Quiz enviado ao banco")
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!"; // Lança um erro se a resposta não estiver OK
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`); // Exibe o erro no console
+      });
+  }
 
-// mostra ou esconde o score
-function hideOrShowQuizz() {
-  quizzContainer.classList.toggle('hide'); // Alterna a classe 'hide' no 'quizzContainer'
-  scoreContainer.classList.toggle('hide'); // Alterna a classe 'hide' no 'scoreContainer'
-}
+  // mostra ou esconde o score
+  function hideOrShowQuizz() {
+    quizzContainer.classList.toggle('hide'); // Alterna a classe 'hide' no 'quizzContainer'
+    scoreContainer.classList.toggle('hide'); // Alterna a classe 'hide' no 'scoreContainer'
+  }
 
-// reiniciar quizz
-const restartBtn = document.querySelector('#restart'); // Seleciona o botão de reiniciar com id 'restart'
-restartBtn.addEventListener('click', function () {
-  //zerar jogo
-  actualQuestion = 0; // Reseta o índice da pergunta atual
-  points = 0; // Reseta a pontuação do usuário
-  hideOrShowQuizz(); // Chama a função hideOrShowQuizz para mostrar o quiz e esconder a pontuação
-  init(); // Chama a função init para iniciar o quiz
-});
+  // inicialização do quizz
+  init(); // Chama a função init para iniciar o quiz 
 
-// inicialização do quizz
-init(); // Chama a função init para iniciar o quiz 
-    </script>
+</script>

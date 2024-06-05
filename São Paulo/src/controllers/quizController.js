@@ -31,6 +31,30 @@ function cadastrar(req, res) {
     }
 }
 
+function rank(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        quizModel.rank()
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                    console.log("Alguma coisa ai", resultado)
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+
+
 module.exports = {
-    cadastrar
+    cadastrar, 
+    rank
 }

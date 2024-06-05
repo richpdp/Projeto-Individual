@@ -7,5 +7,8 @@ var quizController = require("../controllers/quizController");
 router.post("/cadastrar", function (req, res) {
     quizController.cadastrar(req, res);
 })
+router.post("/rank", function (req, res) {
+    quizController.rank(req, res);
+})
 
 module.exports = router;

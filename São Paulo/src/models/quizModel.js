@@ -6,12 +6,30 @@ function cadastrar(score,idUsuario) {
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucaoSql = `
-        INSERT INTO Quizz (score,fkUsuario) VALUES ('${score}', '${idUsuario}');
+        INSERT INTO quiz (score, fkUsuario) VALUES (${score}, ${idUsuario});
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function rank() {
+    
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+    var instrucaoSql = `
+    SELECT u.idUsuario, u.nome, q.maxScore
+    FROM usuario as u
+    JOIN (
+        SELECT fkUsuario, MAX(score) as maxScore
+        FROM quiz
+        GROUP BY fkUsuario
+    ) q ON u.idUsuario = q.fkUsuario;
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
 
 module.exports = {
-    cadastrar
+    cadastrar,
+    rank
 };
