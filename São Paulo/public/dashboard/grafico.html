@@ -19,10 +19,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-
-    <!-- scripts do Chart.js - 2022-1 -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
     <!--FONT AWESOME-->
     <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
 </head>
@@ -64,42 +60,40 @@
 
         </div>
 
-        <!-- <div class="dash">
-            <div id="alerta">
-            </div>
+        <div style="margin-left: 350px; ">
+            <h1>Ranking De Pontuação Do Quiz</h1>
+        </div>
 
-            <div class="btns-dash" id="btnAquario">
-            </div>
-            <canvas id="dht11Umidade"></canvas>
-        </div> -->
-
-        <div style="height: 400px; width: 800px; margin-top: 25vh; margin-left: 25vw;">
+        <div style="height: 400px; width: 2000px; margin-top: 25vh; margin-right: 250px;">
             <canvas id="myChart"></canvas>
         </div>
-        < </body>
+        </body>
 
 </html>
 
+    <!-- scripts do Chart.js - 2022-1 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO
-    // window.onload = graficosDash();
+    //window.onload = graficosDash();
     window.onload = dadosDash();
 
     const ctx = document.getElementById('myChart');
 
-    var myChart1;
-    var usuarios = []
-    var pontos = []
+    let myChart1;
+    let usuarios = [];
+    let pontos = [];
 
-    function graficosDash() {
-        new Chart(ctx, {
+   // function graficosDash(){
+
+      myChart1 = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                labels: usuarios,
                 datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
+                    label: 'Pontuação',
+                    data: pontos,
                     borderWidth: 1,
                     backgroundColor: 'red'
                 }]
@@ -113,7 +107,7 @@
             }
         });
 
-    }
+    //}
 
 
 
@@ -123,22 +117,42 @@
             headers: {
                 "Content-Type": "application/json", // Define o tipo de conteúdo como JSON
             },
-            body: JSON.stringify({
-            })
-        })
-            .then(function (resposta) {
-                console.log("resposta: ", resposta); // Exibe a resposta no console
-
+            }).then(function (resposta) {
                 if (resposta.ok) {
-                    console.log("Dados do banco")
-                    console.log(JSON.stringify(resposta))
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    dataUpdate(json);
+                });
                 } else {
                     throw "Houve um erro ao tentar realizar o cadastro!"; // Lança um erro se a resposta não estiver OK
                 }
             })
             .catch(function (resposta) {
-                console.log(`#ERRO: ${resposta}`); // Exibe o erro no console
+                 // Exibe o erro no console
             });
     }
+
+    function dataUpdate(dataList){
+        var nomes = []
+  
+        for(var i = 0; i< dataList.length; i++){
+            usuarios.push(dataList[i].nome);
+            pontos.push(dataList[i].maxScore);
+        }
+
+        // shift apaga o primeiro item da lista;
+        if(usuarios.length > 6) usuarios.shift();
+        if(pontos.length > 6) usuarios.shift();
+
+        // atualiza o gráfico
+        myChart1.update();
+        
+        usuarios = [];
+        pontos = [];
+    }
+
+    setInterval(dadosDash, 10000);
+    console.log("Set interval");
 
 </script>
